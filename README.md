@@ -4,7 +4,7 @@
 
 
 ========================================
-= tsharesim: taxi ride sharing simulator
+tsharesim: taxi ride sharing simulator
 ========================================
 
 tsharesim simulates a taxi system that dynamically reacts to customer requests. A configurable number of taxis travel along a predefined road network; the simulator attempts to assign new requests (which could come in from a website or a phone system) to a taxi, in such a way that ride sharing is maximized. Ride sharing, where the requests of multiple passengers are combined into one road trip, can save significant amounts of fuel, and also greatly reduce traffic congestion.
