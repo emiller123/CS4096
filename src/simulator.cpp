@@ -9,7 +9,7 @@
 #include <csignal>
 
 //BEGIN CONFIGURATION
-
+//Here is a comment to test things like make and git
 //whether testing mode is enabled
 int TEST_MODE = 0;
 
