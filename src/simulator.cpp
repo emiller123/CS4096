@@ -11,6 +11,7 @@
 //BEGIN CONFIGURATION
 //Here is a comment to test things like make and git
 //whether testing mode is enabled
+//oooo sketchy comment, danger in the code
 //Here is another change.
 int TEST_MODE = 0;
 
