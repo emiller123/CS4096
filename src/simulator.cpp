@@ -11,6 +11,7 @@
 //BEGIN CONFIGURATION
 //Here is a comment to test things like make and git
 //whether testing mode is enabled
+//Here is another change.
 int TEST_MODE = 0;
 
 //enabling this will make all shortest path calls return a path directly to the destination vertex
