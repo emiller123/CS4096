@@ -6,8 +6,11 @@
 #include "taxilinklist.h"
 #include "oneTaxiPath.h"
 
+#include <cstdlib>
 #include <csignal>
+#include <sstream>
 
+ofstream fout;
 //BEGIN CONFIGURATION
 
 //whether testing mode is enabled
@@ -23,10 +26,10 @@ bool LOG_PATHPOINTS = false;
 string inDirectory = "../first_graph";
 
 //maximum number of passengers assigned to a taxi at a time
-int MAX_PASSENGERS = 4;
+int MAX_PASSENGERS = 2;
 
 //number of taxis to simulate
-int MAX_TAXIS = 20000;
+int MAX_TAXIS = 20;
 
 //number of grid cells per unit distance (in this case, GPS coordinates)
 const int HASHER = 200;
@@ -79,7 +82,7 @@ const double LAT_RANGE = (LAT_HIGH_BOUND-LAT_LOW_BOUND)/RAND_MAX;
 //start and end time for the simulation
 //for the entire dataset, use 0 (midnight) to 63000 (17:30)
 int logicalTime = 25200;
-int logicalTimeLimit = 25232;
+int logicalTimeLimit = 25300;
 
 //END CONFIGURATION
 
@@ -517,8 +520,27 @@ void customerSimulator()
 		}
 		constraintFactorAverage /= constraintFactors.size();
 
-		fprintf(stdout, "it=%d  %f %1.5f %1.5f %d %d %10.5f %10.5f %1.1f %1.1f %d/%d %1.5f %1.5f", logicalTime, customers.totalQtime/customers.assignedCount, avgPassengers, avgTopPassengers, maxPassengers, countNoPassengers, averageCustomerResponseTime, averageIterationTime, residentSetSize, vmUsage, unsatisfiedCustomers, satisfiedCustomers, constraintFactorAverage, personDistanceTraveled);
+		// fprintf(stdout, "it=%d  %f %1.5f %1.5f %d %d %10.5f %10.5f %1.1f %1.1f %d/%d %1.5f %1.5f", logicalTime, customers.totalQtime/customers.assignedCount, avgPassengers, avgTopPassengers, maxPassengers, countNoPassengers, averageCustomerResponseTime, averageIterationTime, residentSetSize, vmUsage, unsatisfiedCustomers, satisfiedCustomers, constraintFactorAverage, personDistanceTraveled);
+        // fout<<logicalTime<<endl;
+        // fout<<MAX_TAXIS<<endl;
+        for(int k = 0; k < MAX_TAXIS; k++)
+        {
+			stringstream ss;
+			ss << "car_"<<k+1<<".txt";        	
+        	string file = ss.str();
 
+        	if(logicalTime == 25200)
+        	{
+        		fout.open(file.c_str(), ofstream::out | ofstream::trunc);
+				fout.close();
+        	}
+
+        	fout.open(file.c_str(), fstream::app);
+        	fout<<((taxi[k].current.longitude - 37.932460)*10000)<<endl;
+        	fout<<((taxi[k].current.latitude - 91.722564)*10000)<<endl;
+        	fout.close();
+        }
+        cout<<"Time "<<logicalTime<<" "<<"output to locations.txt"<<endl;
 		for(int i = 0; i < MAX_PASSENGERS; i++) {
 			long passengerValueTotal = 0;
 			for(itr = passengerValueTimes[i].begin(); itr != passengerValueTimes[i].end(); itr++) {
@@ -526,10 +548,10 @@ void customerSimulator()
 			}
 
 			double passengerValueAverage = (double) passengerValueTotal / passengerValueTimes[i].size();
-			cout << " " << passengerValueAverage;
+			// cout << " " << passengerValueAverage;
 		}
 
-		cout << endl;
+		// cout << endl;
 
 		//process the requests and update taxi positions
 		taxiSimulator();
