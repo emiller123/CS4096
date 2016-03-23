@@ -34,6 +34,8 @@ public class script2 : MonoBehaviour
         else if (Input.GetKeyDown("right"))
         {
             move_index++;
+            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.transform.position = new Vector3(y_coordinates[move_index], 0, x_coordinates[move_index]);
             transform.position = new Vector3(y_coordinates[move_index], 0, x_coordinates[move_index]);
         }
 
