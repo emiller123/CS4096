@@ -28,7 +28,7 @@ bool LOG_PATHPOINTS = false;
 string inDirectory = "../first_graph";
 
 //maximum number of passengers assigned to a taxi at a time
-int MAX_PASSENGERS = 2;
+int MAX_PASSENGERS = 4;
 
 //number of taxis to simulate
 int MAX_TAXIS = 20;
@@ -448,7 +448,7 @@ void updateTaxis()
 	avgTopPassengers = (double) passengerTopSize / (passengerSizes.size() / 5);
 	avgPassengers = (double) passengerTotal/MAX_TAXIS;
 }
-
+ofstream request_fout("requests.txt");
 //todo: misleading name
 void customerSimulator()
 {
@@ -474,9 +474,12 @@ void customerSimulator()
 			customerFile >> vertexIndex;
 			newCustomer->pickup = vertices[vertexIndex];
 			
+			request_fout<<newCustomer->pickup->x<<endl;
+			request_fout<<newCustomer->pickup->y<<endl;
+			logicalTime = logicalTimeLimit;
 			customerFile >> vertexIndex;
 			newCustomer->dropoff = vertices[vertexIndex];
-			
+			cout<<newCustomer->pickup->x<<","<<newCustomer->pickup->y<<endl;
 			newCustomer->hashLong = 
 				((((int) (newCustomer->pickup->x*1000000))%HASHINGLONG)/(1000000/HASHER));
 			newCustomer->hashLat = 

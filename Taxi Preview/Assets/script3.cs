@@ -6,6 +6,7 @@ using System.IO;
 public class script3 : MonoBehaviour
 {
     StreamReader sr;
+    StreamReader sr2;
     float[] x_coordinates = new float[100];
     float[] y_coordinates = new float[100];
     int move_index = 0;

@@ -77,6 +77,9 @@
     <Compile Include="Assets\script19.cs" />
     <Compile Include="Assets\script2.cs" />
     <Compile Include="Assets\script20.cs" />
+    <Compile Include="Assets\script22.cs" />
+    <Compile Include="Assets\script23.cs" />
+    <Compile Include="Assets\script24.cs" />
     <Compile Include="Assets\script3.cs" />
     <Compile Include="Assets\script4.cs" />
     <Compile Include="Assets\script5.cs" />
