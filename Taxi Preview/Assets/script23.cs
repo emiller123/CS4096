@@ -16,7 +16,7 @@ public class script23 : MonoBehaviour
 
     void Start()
     {
-        sr = new StreamReader("car_12.txt");
+        sr = new StreamReader("car_17.txt");
         for (int k = 0; k < 100; k++)
         {
             x_coordinates[k] = float.Parse(sr.ReadLine());
@@ -24,45 +24,25 @@ public class script23 : MonoBehaviour
         }
         for (int j = 0; j < 100; j++)
         {
-            request_x[j] = 1000;
-            request_y[j] = 1000;
+            request_x[j] = 10000;
+            request_y[j] = 10000;
         }
-        for (int j = 0; j < 10; j++)
+        for (int j = 88; j < 100; j++)
         {
-            request_x[j] = x_coordinates[9];
-            request_y[j] = y_coordinates[9];
-        }
-        for (int j = 70; j < 80; j++)
-        {
-            request_x[j] = x_coordinates[79];
-            request_y[j] = y_coordinates[79];
+            request_x[j] = x_coordinates[99];
+            request_y[j] = y_coordinates[99];
         }
 
-        sr = new StreamReader("car_18.txt");
+        sr = new StreamReader("car_20.txt");
         for (int k = 0; k < 100; k++)
         {
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        for (int j = 11; j < 16; j++)
+        for (int j = 60; j < 79; j++)
         {
-            request_x[j] = x_coordinates[15];
-            request_y[j] = y_coordinates[15];
-        }
-        for (int j = 36; j < 42; j++)
-        {
-            request_x[j] = x_coordinates[41];
-            request_y[j] = y_coordinates[41];
-        }
-        for (int j = 60; j < 69; j++)
-        {
-            request_x[j] = x_coordinates[68];
-            request_y[j] = y_coordinates[68];
-        }
-        for (int j = 92; j < 99; j++)
-        {
-            request_x[j] = x_coordinates[98];
-            request_y[j] = y_coordinates[98];
+            request_x[j] = x_coordinates[78];
+            request_y[j] = y_coordinates[78];
         }
 
         sr = new StreamReader("car_2.txt");
@@ -71,15 +51,10 @@ public class script23 : MonoBehaviour
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        for (int j = 20; j < 35; j++)
+        for (int j = 20; j < 58; j++)
         {
-            request_x[j] = x_coordinates[34];
-            request_y[j] = y_coordinates[34];
-        }
-        for (int j = 83; j < 92; j++)
-        {
-            request_x[j] = x_coordinates[91];
-            request_y[j] = y_coordinates[91];
+            request_x[j] = x_coordinates[57];
+            request_y[j] = y_coordinates[57];
         }
         transform.position = new Vector3(request_y[move_index], 0, request_x[move_index]);
     }

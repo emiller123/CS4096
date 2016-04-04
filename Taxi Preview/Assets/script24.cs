@@ -24,18 +24,13 @@ public class script24 : MonoBehaviour
         }
         for (int j = 0; j < 100; j++)
         {
-            request_x[j] = 1000;
-            request_y[j] = 1000;
+            request_x[j] = 10000;
+            request_y[j] = 10000;
         }
-        for (int j = 0; j < 10; j++)
+        for (int j = 75; j < 90; j++)
         {
-            request_x[j] = x_coordinates[9];
-            request_y[j] = y_coordinates[9];
-        }
-        for (int j = 74; j < 82; j++)
-        {
-            request_x[j] = x_coordinates[81];
-            request_y[j] = y_coordinates[81];
+            request_x[j] = x_coordinates[89];
+            request_y[j] = y_coordinates[89];
         }
 
         sr = new StreamReader("car_1.txt");
@@ -44,20 +39,10 @@ public class script24 : MonoBehaviour
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        for (int j = 11; j < 16; j++)
+        for (int j = 61; j < 73; j++)
         {
-            request_x[j] = x_coordinates[15];
-            request_y[j] = y_coordinates[15];
-        }
-        for (int j = 40; j < 47; j++)
-        {
-            request_x[j] = x_coordinates[46];
-            request_y[j] = y_coordinates[46];
-        }
-        for (int j = 61; j < 69; j++)
-        {
-            request_x[j] = x_coordinates[68];
-            request_y[j] = y_coordinates[68];
+            request_x[j] = x_coordinates[72];
+            request_y[j] = y_coordinates[72];
         }
 
         sr = new StreamReader("car_5.txt");
@@ -71,7 +56,7 @@ public class script24 : MonoBehaviour
             request_x[j] = x_coordinates[34];
             request_y[j] = y_coordinates[34];
         }
-        for (int j = 43; j < 53; j++)
+        for (int j = 36; j < 53; j++)
         {
             request_x[j] = x_coordinates[52];
             request_y[j] = y_coordinates[52];
