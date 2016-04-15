@@ -10,7 +10,9 @@
 #include <csignal>
 #include <sstream>
 
+double running_total = 0;
 ofstream fout;
+ofstream distance_fout("distance.txt");
 //BEGIN CONFIGURATION
 //Here is a comment to test things like make and git
 //whether testing mode is enabled
@@ -524,7 +526,8 @@ void customerSimulator()
 			constraintFactorAverage += *itrDouble;
 		}
 		constraintFactorAverage /= constraintFactors.size();
-
+		running_total += (MAX_TAXIS*D);
+        distance_fout<<running_total<<endl;
 		// fprintf(stdout, "it=%d  %f %1.5f %1.5f %d %d %10.5f %10.5f %1.1f %1.1f %d/%d %1.5f %1.5f", logicalTime, customers.totalQtime/customers.assignedCount, avgPassengers, avgTopPassengers, maxPassengers, countNoPassengers, averageCustomerResponseTime, averageIterationTime, residentSetSize, vmUsage, unsatisfiedCustomers, satisfiedCustomers, constraintFactorAverage, personDistanceTraveled);
         // fout<<logicalTime<<endl;
         // fout<<MAX_TAXIS<<endl;
