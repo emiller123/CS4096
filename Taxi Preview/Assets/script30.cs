@@ -11,12 +11,16 @@ public class script30 : MonoBehaviour {
     private string mileage = "0";
     private string fuel = "0";
     private string cost= "0";
-
+    private GUIStyle guiStyle = new GUIStyle(); //create a new variable
     void OnGUI()
     {
-        GUI.Label(new Rect(505, 75, 130, 130), "Mileage: " + mileage);
-        GUI.Label(new Rect(505, 100, 130, 130), "Fuel: " + fuel);
-        GUI.Label(new Rect(505, 125, 200, 200), "Cost: " + cost);
+        guiStyle.fontSize = 20; //change the font size
+        guiStyle.normal.textColor = Color.white;
+        GUI.Box(new Rect(504, 50, 190, 100),"");
+        GUI.Label(new Rect(505, 50, 130, 130), "Analytics Information", guiStyle);
+        GUI.Label(new Rect(505, 75, 130, 130), "Mileage: " + mileage,guiStyle);
+        GUI.Label(new Rect(505, 100, 130, 130), "Fuel: " + fuel, guiStyle);
+        GUI.Label(new Rect(505, 125, 200, 200), "Cost: " + cost, guiStyle);
     }
     // Use this for initialization
     void Start()
