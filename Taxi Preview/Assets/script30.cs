@@ -12,15 +12,26 @@ public class script30 : MonoBehaviour {
     private string fuel = "0";
     private string cost= "0";
     private GUIStyle guiStyle = new GUIStyle(); //create a new variable
+    private GUIStyle title = new GUIStyle();
+    private GUIStyle arrows = new GUIStyle();
     void OnGUI()
     {
         guiStyle.fontSize = 20; //change the font size
         guiStyle.normal.textColor = Color.white;
+        title.fontSize = 50; //change the font size
+        title.normal.textColor = Color.black;
+        arrows.fontSize = 15; //change the font size
+        arrows.normal.textColor = Color.black;
         GUI.Box(new Rect(504, 50, 190, 100),"");
+        GUI.Label(new Rect(105, 50, 130, 130), "Ride Sharing", title);
+        GUI.Label(new Rect(140, 120, 130, 130), "Simulator", title);
         GUI.Label(new Rect(505, 50, 130, 130), "Analytics Information", guiStyle);
         GUI.Label(new Rect(505, 75, 130, 130), "Mileage: " + mileage,guiStyle);
         GUI.Label(new Rect(505, 100, 130, 130), "Fuel: " + fuel, guiStyle);
         GUI.Label(new Rect(505, 125, 200, 200), "Cost: " + cost, guiStyle);
+        GUI.Label(new Rect(550, 325, 200, 200), "Use Arrow Keys To Navigate Through Time", arrows);
+        GUI.Label(new Rect(575, 360, 200, 200), "Backward", arrows);
+        GUI.Label(new Rect(750, 360, 200, 200), "Forward", arrows);
     }
     // Use this for initialization
     void Start()
