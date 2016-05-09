@@ -16,6 +16,7 @@ public class script23 : MonoBehaviour
 
     void Start()
     {
+        gameObject.GetComponent<Renderer>().material.color = Color.blue;
         sr = new StreamReader("car_17.txt");
         for (int k = 0; k < 100; k++)
         {
@@ -27,10 +28,10 @@ public class script23 : MonoBehaviour
             request_x[j] = 10000;
             request_y[j] = 10000;
         }
-        for (int j = 88; j < 100; j++)
+        for (int j = 79; j < 92; j++)
         {
-            request_x[j] = x_coordinates[99];
-            request_y[j] = y_coordinates[99];
+            request_x[j] = x_coordinates[90];
+            request_y[j] = y_coordinates[90];
         }
 
         sr = new StreamReader("car_20.txt");
@@ -39,11 +40,11 @@ public class script23 : MonoBehaviour
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        for (int j = 60; j < 79; j++)
-        {
-            request_x[j] = x_coordinates[78];
-            request_y[j] = y_coordinates[78];
-        }
+        //for (int j = 60; j < 79; j++)
+        //{
+          //  request_x[j] = x_coordinates[78];
+           // request_y[j] = y_coordinates[78];
+        //}
 
         sr = new StreamReader("car_2.txt");
         for (int k = 0; k < 100; k++)
@@ -51,7 +52,7 @@ public class script23 : MonoBehaviour
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        for (int j = 20; j < 58; j++)
+        for (int j = 15; j < 58; j++)
         {
             request_x[j] = x_coordinates[57];
             request_y[j] = y_coordinates[57];

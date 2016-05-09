@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using System.IO;
 
-public class script22 : MonoBehaviour
+public class script40 : MonoBehaviour
 {
     StreamReader sr;
     StreamReader sr2;
@@ -16,7 +16,7 @@ public class script22 : MonoBehaviour
 
     void Start()
     {
-        gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        gameObject.GetComponent<Renderer>().material.color = Color.black;
         sr = new StreamReader("car_16.txt");
         for (int k = 0; k < 100; k++)
         {
@@ -28,10 +28,10 @@ public class script22 : MonoBehaviour
             request_x[j] = 10000;
             request_y[j] = 10000;
         }
-        for (int j = 1; j < 25; j++)
+        for (int j = 1; j < 40; j++)
         {
-            request_x[j] = x_coordinates[24];
-            request_y[j] = y_coordinates[24];
+            request_x[j] = x_coordinates[39];
+            request_y[j] = y_coordinates[39];
         }
 
         sr = new StreamReader("car_3.txt");
@@ -40,10 +40,10 @@ public class script22 : MonoBehaviour
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        //for (int j = 58; j < 69; j++)
+        //for (int j = 58; j < 84; j++)
         //{
-         //   request_x[j] = x_coordinates[68];
-         //   request_y[j] = y_coordinates[68];
+          //  request_x[j] = x_coordinates[83];
+          //  request_y[j] = y_coordinates[83];
         //}
 
         sr = new StreamReader("car_1.txt");
@@ -52,21 +52,21 @@ public class script22 : MonoBehaviour
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        //for (int j = 31; j < 53; j++)
+        //for (int j = 28; j < 58; j++)
         //{
-          //  request_x[j] = x_coordinates[52];
-           // request_y[j] = y_coordinates[52];
-        //}
+          //  request_x[j] = x_coordinates[57];
+          //  request_y[j] = y_coordinates[57];
+       // }
         sr = new StreamReader("car_5.txt");
         for (int k = 0; k < 100; k++)
         {
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        for (int j = 70; j < 88; j++)
+        for (int j = 70; j < 100; j++)
         {
-            request_x[j] = x_coordinates[87];
-            request_y[j] = y_coordinates[87];
+            request_x[j] = x_coordinates[99];
+            request_y[j] = y_coordinates[99];
         }
         //for (int j = 81; j < 99; j++)
         //{

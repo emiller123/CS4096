@@ -16,6 +16,7 @@ public class script24 : MonoBehaviour
 
     void Start()
     {
+        gameObject.GetComponent<Renderer>().material.color = Color.blue;
         sr = new StreamReader("car_14.txt");
         for (int k = 0; k < 100; k++)
         {
@@ -27,13 +28,13 @@ public class script24 : MonoBehaviour
             request_x[j] = 10000;
             request_y[j] = 10000;
         }
-        for (int j = 75; j < 90; j++)
-        {
-            request_x[j] = x_coordinates[89];
-            request_y[j] = y_coordinates[89];
-        }
+        //for (int j = 75; j < 90; j++)
+        //{
+        //    request_x[j] = x_coordinates[89];
+        //    request_y[j] = y_coordinates[89];
+        //}
 
-        sr = new StreamReader("car_1.txt");
+        sr = new StreamReader("car_15.txt");
         for (int k = 0; k < 100; k++)
         {
             x_coordinates[k] = float.Parse(sr.ReadLine());
@@ -51,21 +52,21 @@ public class script24 : MonoBehaviour
             x_coordinates[k] = float.Parse(sr.ReadLine());
             y_coordinates[k] = float.Parse(sr.ReadLine());
         }
-        for (int j = 20; j < 35; j++)
+        for (int j = 20; j < 45; j++)
         {
-            request_x[j] = x_coordinates[34];
-            request_y[j] = y_coordinates[34];
+            request_x[j] = x_coordinates[44];
+            request_y[j] = y_coordinates[44];
         }
-        for (int j = 36; j < 53; j++)
-        {
-            request_x[j] = x_coordinates[52];
-            request_y[j] = y_coordinates[52];
-        }
-        for (int j = 88; j < 99; j++)
-        {
-            request_x[j] = x_coordinates[98];
-            request_y[j] = y_coordinates[98];
-        }
+        //for (int j = 36; j < 53; j++)
+        //{
+         //   request_x[j] = x_coordinates[52];
+         //   request_y[j] = y_coordinates[52];
+        //}
+        //for (int j = 88; j < 99; j++)
+        //{
+          //  request_x[j] = x_coordinates[98];
+          //  request_y[j] = y_coordinates[98];
+       // }
         transform.position = new Vector3(request_y[move_index], 0, request_x[move_index]);
     }
 

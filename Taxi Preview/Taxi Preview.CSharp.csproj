@@ -84,6 +84,10 @@
     <Compile Include="Assets\script30.cs" />
     <Compile Include="Assets\script31.cs" />
     <Compile Include="Assets\script4.cs" />
+    <Compile Include="Assets\script40.cs" />
+    <Compile Include="Assets\script41.cs" />
+    <Compile Include="Assets\script42.cs" />
+    <Compile Include="Assets\script442.cs" />
     <Compile Include="Assets\script5.cs" />
     <Compile Include="Assets\script6.cs" />
     <Compile Include="Assets\script7.cs" />
